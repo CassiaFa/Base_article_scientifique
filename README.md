@@ -1,4 +1,4 @@
-# Base_article_scientifique
+# Base_article_scientifique 📖
 
 ## Contexte du projet
 
