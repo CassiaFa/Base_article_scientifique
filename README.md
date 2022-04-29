@@ -39,5 +39,5 @@ Les tâches à faire pour ce projet ont été réalisé dans le fichier *command
 - [x] Compter le nombre de publications depuis 2011 et par type
 - [x] Compter le nombre de publications par auteur et trier le résultat par ordre croissant  
   
-**Bonnus :** 
+**Bonus :** 
 - [x] demande le chemin d'un fichier json, insére un ou plusieurs nouveaux documents, à partir de ce fichier, dans la collection publis
