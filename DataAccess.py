@@ -42,8 +42,8 @@ class DataAccess:
         return list(cls.collection.find(condition, sort=trie))
     
     @classmethod
-    def unique(cls, condition):
-        return cls.collection.distinct(condition)
+    def unique(cls, champ):
+        return cls.collection.distinct(champ)
 
     @classmethod
     def charger_fichier(cls):
