@@ -10,6 +10,7 @@ DataAccess.connexion()
 # Le script Python doit permettre de : 
 # Compter le nombre de documents de la collection publis; X
 DataAccess.nb_document()
+
 # Lister tous les livres (type “Book”) ; X
 condition = {"type" : "Book"}
 lst_livres = DataAccess.lister_document(condition)
@@ -40,7 +41,7 @@ print(lst_auteur)
 # Trier les publications de “Toru Ishida” par titre de livre ; 
 
 condition = {
-    "authors" : {"$in": ["Toru Ishida"]}
+    "authors" : {"$in": ["Toru Ishida"]} #  peut également s'écrire => "authors" : "Toru Ishida"}
 }
 
 trie = [("title", 1)] # pymongo.Ascending = 1 pymongo.DESCENDING = -1
@@ -50,7 +51,7 @@ pprint(lst_livres)
 
 # Compter le nombre de ses publications ; 
 
-print(f"Nombre de document trouvé : {len()}")
+print(f"Nombre de documents trouvés : {len(lst_livres)}")
 
 # Compter le nombre de publications depuis 2011 et par type ;
 
@@ -92,6 +93,15 @@ for i in nb_publi_auteur:
 
 # Et s'il vous reste du temps écrire un petit script qui : demande le chemin d'un fichier json, insére un ou plusieurs nouveaux documents, à partir de ce fichier, dans la collection publis.
 
+DataAccess.charger_fichier()
+
 # Pour tester ce dernier script, créer un fichier json à partir des informations trouvées sur le site proposé en lien.
 
-DataAccess.connexion()
+#====================
+# Pour bien faire 
+#====================
+# Il faudrait ajouter une condition à chaque fonction pour vérifier si DataAccess.connexion() à bien été lancé au préalable.
+# Il faudrait également ajouter un try/execpt dans la fonction DataAccess.charger_fichier() pour ne pas stopper dès qu'un duplicat est trouvé
+#____________________
+
+DataAccess.deconnexion()

@@ -1,4 +1,8 @@
 from pymongo import MongoClient
+import json
+import tkinter as tk
+from tkinter import filedialog
+from tqdm import tqdm
 
 class DataAccess:
 
@@ -40,3 +44,17 @@ class DataAccess:
     @classmethod
     def unique(cls, condition):
         return cls.collection.distinct(condition)
+
+    @classmethod
+    def charger_fichier(cls):
+        tk.Tk().withdraw()
+        filename = filedialog.askopenfilename()
+        print(filename)
+        
+        lst_article = []
+        with open(filename, 'r') as f:
+            for objetJSON in tqdm(f):
+                lst_article.append(json.loads(objetJSON))
+        
+        cls.collection.insert_many(lst_article)
+        
